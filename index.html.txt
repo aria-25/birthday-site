@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Love!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+    }
+    header {
+      background-color: #ff69b4;
+      padding: 1em;
+      color: white;
+      text-align: center;
+    }
+    nav {
+      background-color: #ffb6c1;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 1em 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    nav a.active-link {
+      text-decoration: underline;
+    }
+    section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      padding: 2em;
+    }
+    section.active {
+      display: block;
+      opacity: 1;
+    }
+    .gallery img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1em;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5em;
+    }
+    footer {
+      background-color: #ff69b4;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body onload="showSection('home')">
+  <header>
+    <h1>Happy Birthday, My Love! 🎂❤️</h1>
+  </header>
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('gallery')">Gallery</a>
+    <a onclick="showSection('story')">Our Story</a>
+    <a onclick="showSection('wish')">Birthday Wish</a>
+    <a onclick="showSection('contact')">From Me</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>Welcome 💖</h2>
+    <p>Click on the sections above to see everything I’ve created just for you bubs! 💫</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Our Memories 📸</h2>
+    <div class="gallery">
+      <img src="images/pic1.jpg" alt="Memory 1">
+      <img src="images/pic2.jpg" alt="Memory 2">
+      <img src="images/pic3.jpg" alt="Memory 3">
+      <img src="images/pic4.jpg" alt="Memory 4">
+      <img src="images/pic5.jpg" alt="Memory 5">
+      <img src="images/pic6.jpg" alt="Memory 6">
+    </div>
+  </section>
+
+  <section id="story">
+    <h2>Our Story 💑</h2>
+    <p>It all began with a simple message on 25th February 2023, a math assignment you sent me after I asked in class. Just two friends, nothing more. Back then, neither of us could’ve imagined how much that small act of kindness would mean one day. We were just... us. Laughing over silly texts, sharing little parts of our day, unknowingly planting the first seeds of something beautiful.</p>
+    <p>Months passed. Seasons changed. So did we: growing quietly beside each other. Still friends.</p>
+    <p>Then came November 2024.</p>
+    <p>Alibaug.</p>
+    <p>Two days; 21st and 22nd, that felt like they belonged to another world. The sea, the sky, the soft hush of sand under our feet... and us. Something shifted. Not loudly. Not suddenly. Just... gently. We began to see each other in a new light. Not just as friends, but as something far more tender, far more terrifying, and far more real.</p>
+    <p>On 25th November 2024, we finally said it. We like each other.</p>
+    <p>Not just in the casual way. But in the 'I see you and I want to be here for all of it' way. That night, we started dating.</p>
+    <p>So here we are.</p>
+    <p>From a shared assignment in 2023...</p>
+    <p>To a memory in Alibaug...</p>
+    <p>To a love that keeps unfolding every single day.</p>
+    <p>Ours. Quiet, honest, magical.</p>
+  </section>
+
+  <section id="wish">
+    <h2>Your Birthday Wish 🎁</h2>
+    <p>Happy Birthday, Anshul ❤️</p>
+    <p>Today, I’m celebrating you: the boy who somehow became my best friend, my favorite person, and my safe place, all at once.</p>
+    <p>You have this quiet way of making the ordinary feel magical. Even on the hardest days, just having you around makes everything better.</p>
+    <p>Your laughter is still my favorite sound.</p>
+    <p>Your eyes: the calm I never knew I needed.</p>
+    <p>And your heart? It feels like home.</p>
+    <p>I still can’t believe I get to love you, and be loved by you.</p>
+    <p>So here’s to your smile, your dreams, your soft kindness, and everything that makes you, you.</p>
+    <p>Here’s to more late-night calls, more goofy texts, more little moments that turn into forever memories… more us.</p>
+    <p>I’ll always be here, cheering for you...in every version of your future.</p>
+    <p>Happy birthday, Anshul. I love you. More than words, always.</p>
+  </section>
+
+  <section id="contact">
+    <h2>With All My Love 💌</h2>
+    <p>~ From Yours Truly ❤️<br>Always and forever, Ariiaaa</p>
+  </section>
+
+  <footer>
+    Made with love for my one and only ❤️
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      document.getElementById(id).classList.add('active');
+
+      navLinks.forEach(link => {
+        link.classList.remove('active-link');
+        if (link.getAttribute('onclick')?.includes(id)) {
+          link.classList.add('active-link');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
